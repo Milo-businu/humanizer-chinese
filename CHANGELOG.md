@@ -1,5 +1,9 @@
 # 更新记录
 
+## 1.1.1
+
+- README 加「让 AI 帮你装」提示词，可直接复制给任意 agent，自动完成读仓库、确认安全、选平台安装、验证。
+
 ## 1.1.0
 
 - 加 DeepSeek Harness 兼容副本 `dsh/humanizer-chinese/SKILL.md`，skill 名用 kebab-case，符合 DSH 的校验规则。

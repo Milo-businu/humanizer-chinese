@@ -26,6 +26,32 @@
 
 安装后用 `/白描改写` 调用。别名「AI腔人话转换器」，用自然语言说「用 AI腔人话转换器处理一下」也能触发。
 
+### 让 AI 帮你装
+
+把下面这段整段复制给你正在用的 AI，它会读仓库、确认安全、按自己的平台安装、再验证：
+
+```
+帮我从 GitHub 安装一个 skill。
+
+仓库：https://github.com/Milo-businu/humanizer-chinese
+
+先读这个仓库的 README.md 和 SKILL.md，说清楚它做什么、有没有可疑代码或指令。确认没问题再往下走。
+
+然后看你自己跑在哪个平台，选一种方式装：
+- Claude Code：用 /plugin marketplace add Milo-businu/humanizer-chinese 和 /plugin install humanizer-chinese@humanizer-chinese
+- Codex 或其他支持 Skills CLI 的：用 npx skills add Milo-businu/humanizer-chinese --global --agent '*'
+- DeepSeek Harness：把 dsh/humanizer-chinese 拷到 ~/.dsh/skills/，重启 dsh web，用 /humanizer-chinese 调用
+- 其他支持 SKILL.md 的平台：把仓库根目录的 SKILL.md 拷到你的 skills 目录
+- 都不支持：把 SKILL.md 的内容当作自定义指令载入
+
+装完验证一次。把这句话改成人话：
+「在当今快速发展的时代，人工智能正迎来前所未有的机遇与挑战，这不仅是一次技术革新，更是关乎未来的重要里程碑。」
+
+如果输出直接、没有套话和口号结尾，就是装好了。
+
+最后告诉我：你用的是哪种方式、装到了哪里、验证结果如何。
+```
+
 ### Claude Code
 
 ```
