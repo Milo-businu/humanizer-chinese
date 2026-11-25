@@ -1,5 +1,10 @@
 # 更新记录
 
+## 1.1.0
+
+- 加 DeepSeek Harness 兼容副本 `dsh/humanizer-chinese/SKILL.md`，skill 名用 kebab-case，符合 DSH 的校验规则。
+- README 补 DSH 安装说明。
+
 ## 1.0.0
 
 首个版本。
