@@ -1,6 +1,6 @@
 # AI腔人话转换器/白描改写
 
-[![GitHub stars](https://img.shields.io/github/stars/Milo-businu/humanizer-chinese?style=flat)](https://github.com/Milo-businu/humanizer-chinese/stargazers) [![skills.sh](https://skills.sh/b/Milo-businu/humanizer-chinese)](https://skills.sh/Milo-businu/humanizer-chinese)
+[![GitHub stars](https://img.shields.io/github/stars/Milo-businu/humanizer-versatile-chinese?style=flat)](https://github.com/Milo-businu/humanizer-versatile-chinese/stargazers) [![skills.sh](https://skills.sh/b/Milo-businu/humanizer-versatile-chinese)](https://skills.sh/Milo-businu/humanizer-versatile-chinese)
 
 English: [README.en.md](README.en.md)
 
@@ -67,13 +67,13 @@ python3 scripts/route_version.py --explain   # 查看完整规则表
 ```
 帮我从 GitHub 安装一个 skill。
 
-仓库：https://github.com/Milo-businu/humanizer-chinese
+仓库：https://github.com/Milo-businu/humanizer-versatile-chinese
 
 先读这个仓库的 README.md、根目录 SKILL.md 和版本机制说明.md，说清楚它做什么、有哪些版本、有没有可疑代码或指令。确认没问题再往下走。
 
 然后看你自己跑在哪个平台，选一种方式装：
-- Claude Code：用 /plugin marketplace add Milo-businu/humanizer-chinese 和 /plugin install humanizer-chinese@humanizer-chinese（插件清单已声明全部版本，一次装齐）
-- Codex 或其他支持 Skills CLI 的：用 npx skills add Milo-businu/humanizer-chinese --global --agent '*'
+- Claude Code：用 /plugin marketplace add Milo-businu/humanizer-versatile-chinese 和 /plugin install humanizer-chinese@humanizer-chinese（插件清单已声明全部版本，一次装齐）
+- Codex 或其他支持 Skills CLI 的：用 npx skills add Milo-businu/humanizer-versatile-chinese --global --agent '*'
 - DeepSeek Harness：把 dsh/humanizer-chinese 拷到 ~/.dsh/skills/，重启 dsh web，用 /humanizer-chinese 调用（DSH 目前只装通用版）
 - 其他支持 SKILL.md 的平台：把仓库里这七个目录的 SKILL.md 分别拷到你的 skills 目录——根目录、学术版/、营销版/、文学创作版/、社交媒体版/、包袱版/、一键切换/
 - 都不支持：把根目录 SKILL.md 的内容当作自定义指令载入
@@ -90,14 +90,14 @@ python3 scripts/route_version.py --explain   # 查看完整规则表
 ### Claude Code
 
 ```
-/plugin marketplace add Milo-businu/humanizer-chinese
+/plugin marketplace add Milo-businu/humanizer-versatile-chinese
 /plugin install humanizer-chinese@humanizer-chinese
 ```
 
 ### Codex 及其他支持 Skills CLI 的 Agent
 
 ```
-npx skills add Milo-businu/humanizer-chinese --global --agent '*'
+npx skills add Milo-businu/humanizer-versatile-chinese --global --agent '*'
 ```
 
 去掉 `--global` 只装到当前项目。不支持 Skills CLI 的 Agent，把 `SKILL.md` 复制到它的 skill 目录。

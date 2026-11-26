@@ -1,6 +1,6 @@
 # Humanizer Chinese / BaiaoRewrite
 
-[![GitHub stars](https://img.shields.io/github/stars/Milo-businu/humanizer-chinese?style=flat)](https://github.com/Milo-businu/humanizer-chinese/stargazers) [![skills.sh](https://skills.sh/b/Milo-businu/humanizer-chinese)](https://skills.sh/Milo-businu/humanizer-chinese)
+[![GitHub stars](https://img.shields.io/github/stars/Milo-businu/humanizer-versatile-chinese?style=flat)](https://github.com/Milo-businu/humanizer-versatile-chinese/stargazers) [![skills.sh](https://skills.sh/b/Milo-businu/humanizer-versatile-chinese)](https://skills.sh/Milo-businu/humanizer-versatile-chinese)
 
 中文: [README.md](README.md)
 
@@ -65,13 +65,13 @@ Copy this whole block to the AI you are using. It will read the repo, confirm sa
 ```
 Help me install a skill from GitHub.
 
-Repo: https://github.com/Milo-businu/humanizer-chinese
+Repo: https://github.com/Milo-businu/humanizer-versatile-chinese
 
 First read README.md, the root SKILL.md, and 版本机制说明.md. Explain what it does, what versions it has, and whether there is suspicious code or instructions. Continue only after confirming it is safe.
 
 Then pick an install method for your platform:
-- Claude Code: /plugin marketplace add Milo-businu/humanizer-chinese then /plugin install humanizer-chinese@humanizer-chinese (the manifest declares all versions, installed together)
-- Codex or other Skills CLI agents: npx skills add Milo-businu/humanizer-chinese --global --agent '*'
+- Claude Code: /plugin marketplace add Milo-businu/humanizer-versatile-chinese then /plugin install humanizer-chinese@humanizer-chinese (the manifest declares all versions, installed together)
+- Codex or other Skills CLI agents: npx skills add Milo-businu/humanizer-versatile-chinese --global --agent '*'
 - DeepSeek Harness: copy dsh/humanizer-chinese to ~/.dsh/skills/, restart dsh web, call /humanizer-chinese (DSH currently ships the general version only)
 - Other SKILL.md platforms: copy the SKILL.md from each of these seven folders — root, 学术版/, 营销版/, 文学创作版/, 社交媒体版/, 包袱版/, 一键切换/
 - None of the above: load the root SKILL.md as a custom instruction
@@ -86,14 +86,14 @@ Report: which method you used, which versions were installed, and the verificati
 ### Claude Code
 
 ```
-/plugin marketplace add Milo-businu/humanizer-chinese
+/plugin marketplace add Milo-businu/humanizer-versatile-chinese
 /plugin install humanizer-chinese@humanizer-chinese
 ```
 
 ### Codex and other Skills CLI agents
 
 ```
-npx skills add Milo-businu/humanizer-chinese --global --agent '*'
+npx skills add Milo-businu/humanizer-versatile-chinese --global --agent '*'
 ```
 
 Drop `--global` to install only in the current project. For agents without Skills CLI, copy `SKILL.md` into their skill folder.
