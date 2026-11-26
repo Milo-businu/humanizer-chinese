@@ -190,3 +190,5 @@ AI 写中文，爱挑"对谁都适用"的说法；人写中文，只对眼前这
 ## 来源
 
 工作流借自 [blader/humanizer](https://github.com/blader/humanizer) 4.0：标记 → 初稿 → 核对 → 终稿，还有事实优先、样本覆盖规则、三种输出模式。模式库、误伤防护和例子是中文重写的，不是翻译。底层观察来自维基百科 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)。
+
+<!-- 通用版：中文去 AI 腔核心规则 -->
