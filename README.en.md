@@ -293,3 +293,5 @@ Currently 2.1.1: six versions plus the router. Full history: [CHANGELOG.md](CHAN
 ## License
 
 MIT
+
+<!-- 英文说明文档 -->
