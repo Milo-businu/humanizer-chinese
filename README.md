@@ -286,7 +286,7 @@ cp -r 包袱版 ~/.dsh/skills/humanizer-baofu
 
 ## 版本记录
 
-当前 2.1.0：六个版本 + 一键切换工具。完整记录见 [CHANGELOG.md](CHANGELOG.md)。
+当前 2.1.1：六个版本 + 一键切换工具。完整记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 许可
 
