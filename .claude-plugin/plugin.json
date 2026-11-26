@@ -19,11 +19,11 @@
   ],
   "skills": [
     "./",
-    "学术版/",
-    "营销版/",
-    "文学创作版/",
-    "社交媒体版/",
-    "包袱版/",
-    "一键切换/"
+    "academic/",
+    "marketing/",
+    "literary/",
+    "social/",
+    "punchline/",
+    "router/"
   ]
 }

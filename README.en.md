@@ -35,11 +35,11 @@ The root directory holds the general version. Use an extension when the scene ca
 | Version | Directory | When to use | In one line |
 |---------|-----------|-------------|-------------|
 | General | root | General Chinese writing | Remove AI tells, sound like a person |
-| Academic | `学术版/` | Papers, grants, theses | Three invariants: facts, citations, conclusions untouched |
-| Marketing | `营销版/` | Product pages, ads, CTA | Cut empty hype, keep the sales power |
-| Literary | `文学创作版/` | Fiction, essays, poetry, dialogue | Meaning stays; dialect and fragments are assets |
-| Social media | `社交媒体版/` | Xiaohongshu, WeChat, Zhihu, short video | Rewrite per platform, return multiple headline options |
-| Punchline | `包袱版/` | Jokes, stand-up, comedy beats | The only version that adds flavor on purpose |
+| Academic | `academic/` | Papers, grants, theses | Three invariants: facts, citations, conclusions untouched |
+| Marketing | `marketing/` | Product pages, ads, CTA | Cut empty hype, keep the sales power |
+| Literary | `literary/` | Fiction, essays, poetry, dialogue | Meaning stays; dialect and fragments are assets |
+| Social media | `social/` | Xiaohongshu, WeChat, Zhihu, short video | Rewrite per platform, return multiple headline options |
+| Punchline | `punchline/` | Jokes, stand-up, comedy beats | The only version that adds flavor on purpose |
 
 Each extension is its own folder with `SKILL.md` and `references/测试样例.md`. Design rationale lives in `proposals/`.
 
@@ -73,7 +73,7 @@ Then pick an install method for your platform:
 - Claude Code: /plugin marketplace add Milo-businu/humanizer-versatile-chinese then /plugin install humanizer-chinese@humanizer-chinese (the manifest declares all versions, installed together)
 - Codex or other Skills CLI agents: npx skills add Milo-businu/humanizer-versatile-chinese --global --agent '*'
 - DeepSeek Harness: copy dsh/humanizer-chinese to ~/.dsh/skills/, restart dsh web, call /humanizer-chinese (DSH currently ships the general version only)
-- Other SKILL.md platforms: copy the SKILL.md from each of these seven folders — root, 学术版/, 营销版/, 文学创作版/, 社交媒体版/, 包袱版/, 一键切换/
+- Other SKILL.md platforms: copy the SKILL.md from each of these seven folders — root, academic/, marketing/, literary/, social/, punchline/, router/
 - None of the above: load the root SKILL.md as a custom instruction
 
 Verify twice:
@@ -112,8 +112,8 @@ Restart `dsh web`, then call `/humanizer-chinese` or just say "rewrite this in h
 **Note**: only the general version has a DSH-compatible copy so far. The five extensions and the router use kebab-case names but have no `dsh/` copy. To use an extension in DSH, copy its folder manually:
 
 ```
-cp -r 学术版 ~/.dsh/skills/humanizer-academic
-cp -r 包袱版 ~/.dsh/skills/humanizer-baofu
+cp -r academic ~/.dsh/skills/humanizer-academic
+cp -r punchline ~/.dsh/skills/humanizer-baofu
 ```
 
 Same for the others — replace the source folder with the matching version.
@@ -272,11 +272,11 @@ Every version has its own test samples. After changing rules, rerun the original
 | Version | File | Focus |
 |---------|------|-------|
 | General | [测试样例.md](测试样例.md) | 7 cases: official tone, AI brief, report, chat, technical text, prompt injection, voice matching |
-| Academic | [学术版/references/测试样例.md](学术版/references/测试样例.md) | Three invariants and ethics prompts |
-| Marketing | [营销版/references/测试样例.md](营销版/references/测试样例.md) | Selling points, CTA, compliance |
-| Literary | [文学创作版/references/测试样例.md](文学创作版/references/测试样例.md) | Author voice, whitelist protection |
-| Social | [社交媒体版/references/测试样例.md](社交媒体版/references/测试样例.md) | Platform register, ad labels |
-| Punchline | [包袱版/references/测试样例.md](包袱版/references/测试样例.md) | Cold jokes, character motivation |
+| Academic | [academic/references/测试样例.md](academic/references/测试样例.md) | Three invariants and ethics prompts |
+| Marketing | [marketing/references/测试样例.md](marketing/references/测试样例.md) | Selling points, CTA, compliance |
+| Literary | [literary/references/测试样例.md](literary/references/测试样例.md) | Author voice, whitelist protection |
+| Social | [social/references/测试样例.md](social/references/测试样例.md) | Platform register, ad labels |
+| Punchline | [punchline/references/测试样例.md](punchline/references/测试样例.md) | Cold jokes, character motivation |
 
 ## Sources
 

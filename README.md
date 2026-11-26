@@ -35,11 +35,11 @@ English: [README.en.md](README.en.md)
 | 版本 | 目录 | 什么时候用 | 一句话定位 |
 |------|------|-----------|-----------|
 | 通用版 | 根目录 | 一般中文写作 | 去 AI 腔，像人说话 |
-| 学术版 | `学术版/` | 论文、基金、学位论文 | 三不变：事实、引文、结论不动 |
-| 营销版 | `营销版/` | 详情页、广告语、CTA | 去空泛自夸，不去销售力 |
-| 文学创作版 | `文学创作版/` | 小说、散文、诗歌、对白 | 意图不变话变，方言碎句是资产 |
-| 社交媒体版 | `社交媒体版/` | 小红书、公众号、知乎、口播 | 按平台语域改写，给多标题多版本 |
-| 包袱版 | `包袱版/` | 段子、脱口秀、剧情包袱 | 唯一主动造笑的版本 |
+| 学术版 | `academic/` | 论文、基金、学位论文 | 三不变：事实、引文、结论不动 |
+| 营销版 | `marketing/` | 详情页、广告语、CTA | 去空泛自夸，不去销售力 |
+| 文学创作版 | `literary/` | 小说、散文、诗歌、对白 | 意图不变话变，方言碎句是资产 |
+| 社交媒体版 | `social/` | 小红书、公众号、知乎、口播 | 按平台语域改写，给多标题多版本 |
+| 包袱版 | `punchline/` | 段子、脱口秀、剧情包袱 | 唯一主动造笑的版本 |
 
 每个扩展版是独立文件夹，含 `SKILL.md` 和 `references/测试样例.md`。设计依据在 `proposals/`。
 
@@ -75,7 +75,7 @@ python3 scripts/route_version.py --explain   # 查看完整规则表
 - Claude Code：用 /plugin marketplace add Milo-businu/humanizer-versatile-chinese 和 /plugin install humanizer-chinese@humanizer-chinese（插件清单已声明全部版本，一次装齐）
 - Codex 或其他支持 Skills CLI 的：用 npx skills add Milo-businu/humanizer-versatile-chinese --global --agent '*'
 - DeepSeek Harness：把 dsh/humanizer-chinese 拷到 ~/.dsh/skills/，重启 dsh web，用 /humanizer-chinese 调用（DSH 目前只装通用版）
-- 其他支持 SKILL.md 的平台：把仓库里这七个目录的 SKILL.md 分别拷到你的 skills 目录——根目录、学术版/、营销版/、文学创作版/、社交媒体版/、包袱版/、一键切换/
+- 其他支持 SKILL.md 的平台：把仓库里这七个目录的 SKILL.md 分别拷到你的 skills 目录——根目录、academic/、marketing/、literary/、social/、punchline/、router/
 - 都不支持：把根目录 SKILL.md 的内容当作自定义指令载入
 
 装完验证两次：
@@ -116,8 +116,8 @@ cp -r dsh/humanizer-chinese ~/.dsh/skills/
 **注意**：DSH 兼容副本目前只有通用版。五个扩展版和一键切换入口还没做 DSH 适配——它们的 `name` 已是 kebab-case，但 `dsh/` 下没有对应副本。要在 DSH 里用扩展版，把对应目录的 `SKILL.md` 拷到 `~/.dsh/skills/<kebab-case-name>/` 下，例如：
 
 ```
-cp -r 学术版 ~/.dsh/skills/humanizer-academic
-cp -r 包袱版 ~/.dsh/skills/humanizer-baofu
+cp -r academic ~/.dsh/skills/humanizer-academic
+cp -r punchline ~/.dsh/skills/humanizer-baofu
 ```
 
 其余版本同理，目录名换成各自的 kebab-case name。
@@ -278,11 +278,11 @@ cp -r 包袱版 ~/.dsh/skills/humanizer-baofu
 | 版本 | 样例文件 | 重点检查 |
 |------|----------|----------|
 | 通用版 | [测试样例.md](测试样例.md) | 7 组：公众号腔、AI 日报、公文、聊天、技术文档、提示注入、语气匹配 |
-| 学术版 | [学术版/references/测试样例.md](学术版/references/测试样例.md) | 三不变是否守住、伦理提示是否到位 |
-| 营销版 | [营销版/references/测试样例.md](营销版/references/测试样例.md) | 卖点是否保住、CTA 是否强化、红线是否守住 |
-| 文学创作版 | [文学创作版/references/测试样例.md](文学创作版/references/测试样例.md) | 作者声音是否一致、白名单是否被误伤 |
-| 社交媒体版 | [社交媒体版/references/测试样例.md](社交媒体版/references/测试样例.md) | 平台语域是否正确、广告标识是否保留 |
-| 包袱版 | [包袱版/references/测试样例.md](包袱版/references/测试样例.md) | 冷笑话是否被误伤、人物动机是否保持 |
+| 学术版 | [academic/references/测试样例.md](academic/references/测试样例.md) | 三不变是否守住、伦理提示是否到位 |
+| 营销版 | [marketing/references/测试样例.md](marketing/references/测试样例.md) | 卖点是否保住、CTA 是否强化、红线是否守住 |
+| 文学创作版 | [literary/references/测试样例.md](literary/references/测试样例.md) | 作者声音是否一致、白名单是否被误伤 |
+| 社交媒体版 | [social/references/测试样例.md](social/references/测试样例.md) | 平台语域是否正确、广告标识是否保留 |
+| 包袱版 | [punchline/references/测试样例.md](punchline/references/测试样例.md) | 冷笑话是否被误伤、人物动机是否保持 |
 
 ## 来源
 
