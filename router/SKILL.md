@@ -117,3 +117,5 @@ echo "写个小红书段子" | python3 scripts/route_version.py
 - `版本机制说明.md`：六个版本的机制对照与移交规则
 - `scripts/route_version.py`：规则路由脚本，可 --explain 查看完整规则表
 - `proposals/`：五份设计提案，详细调研依据
+
+<!-- 一键切换：自动判断该用哪个版本 -->
