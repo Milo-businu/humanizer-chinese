@@ -4,8 +4,18 @@
   "description": "把中文 AI 腔改写成人话，不改变原意。",
   "license": "MIT",
   "repository": "github:Milo-businu/humanizer-chinese",
-  "keywords": ["pi-package"],
+  "keywords": [
+    "pi-package"
+  ],
   "pi": {
-    "skills": ["./"]
+    "skills": [
+      "./",
+      "学术版/",
+      "营销版/",
+      "文学创作版/",
+      "社交媒体版/",
+      "包袱版/",
+      "一键切换/"
+    ]
   }
 }

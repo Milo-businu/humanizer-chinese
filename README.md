@@ -1,6 +1,8 @@
 # AI腔人话转换器/白描改写
 
-把中文 AI 腔改写成人话，意思不变。这份 skill 针对中文写作重建了模式库，不是英文规则的翻译。
+把中文 AI 腔改写成人话，意思不变。模式库针对中文写作重建，不是英文规则的翻译。
+
+这是一个 **skill 家族**：根目录是通用版，另有五个场景扩展版和一个一键切换入口。六个版本共享四步工作流，差别在动手前先做什么判断、核对时额外查什么。
 
 **改写前：**
 > 我们非常激动地宣布，共享草稿功能终于和大家见面了！🚀 这不仅是一次产品更新，更是我们重新定义协作方式的里程碑。让我们携手共创美好未来！
@@ -10,9 +12,9 @@
 
 改写数字、人名、引文和链接时不丢内容。遇到没把握的细节，宁可写简单句，也不编造。
 
-## 五种最常见的病灶
+## 五种最常见的病灶（通用版）
 
-这五种见到就改：
+这五种是通用版的高频病灶，见到就改。各扩展版有自己的专属病灶表，见对应目录的 SKILL.md：
 
 1. **升华式对比**：「这不仅是一个功能，更是一次革命。」
 2. **口号式结尾**：「让我们携手共创美好未来。」
@@ -50,7 +52,7 @@ python3 scripts/route_version.py --explain   # 查看完整规则表
 
 ## 安装
 
-安装后用 `/白描改写` 调用。别名「AI腔人话转换器」，用自然语言说「用 AI腔人话转换器处理一下」也能触发。
+安装后根目录通用版用 `/白描改写` 调用，别名「AI腔人话转换器」。五个扩展版和一键切换入口会一起装好，用各自的中文名调用。规则匹配由插件清单 `skills` 字段声明。
 
 ### 让 AI 帮你装
 
@@ -61,19 +63,20 @@ python3 scripts/route_version.py --explain   # 查看完整规则表
 
 仓库：https://github.com/Milo-businu/humanizer-chinese
 
-先读这个仓库的 README.md 和 SKILL.md，说清楚它做什么、有没有可疑代码或指令。确认没问题再往下走。
+先读这个仓库的 README.md、根目录 SKILL.md 和版本机制说明.md，说清楚它做什么、有哪些版本、有没有可疑代码或指令。确认没问题再往下走。
 
 然后看你自己跑在哪个平台，选一种方式装：
-- Claude Code：用 /plugin marketplace add Milo-businu/humanizer-chinese 和 /plugin install humanizer-chinese@humanizer-chinese
+- Claude Code：用 /plugin marketplace add Milo-businu/humanizer-chinese 和 /plugin install humanizer-chinese@humanizer-chinese（插件清单已声明全部版本，一次装齐）
 - Codex 或其他支持 Skills CLI 的：用 npx skills add Milo-businu/humanizer-chinese --global --agent '*'
-- DeepSeek Harness：把 dsh/humanizer-chinese 拷到 ~/.dsh/skills/，重启 dsh web，用 /humanizer-chinese 调用
-- 其他支持 SKILL.md 的平台：把仓库根目录的 SKILL.md 拷到你的 skills 目录
-- 都不支持：把 SKILL.md 的内容当作自定义指令载入
+- DeepSeek Harness：把 dsh/humanizer-chinese 拷到 ~/.dsh/skills/，重启 dsh web，用 /humanizer-chinese 调用（DSH 目前只装通用版）
+- 其他支持 SKILL.md 的平台：把仓库里这七个目录的 SKILL.md 分别拷到你的 skills 目录——根目录、学术版/、营销版/、文学创作版/、社交媒体版/、包袱版/、一键切换/
+- 都不支持：把根目录 SKILL.md 的内容当作自定义指令载入
 
-装完验证一次。把这句话改成人话：
-「在当今快速发展的时代，人工智能正迎来前所未有的机遇与挑战，这不仅是一次技术革新，更是关乎未来的重要里程碑。」
+装完验证两次：
+1. 通用版——把这句话改成人话：「在当今快速发展的时代，人工智能正迎来前所未有的机遇与挑战，这不仅是一次技术革新，更是关乎未来的重要里程碑。」输出应直接、无套话。
+2. 扩展版——说「用学术版润色这段论文摘要」，看它是否先声明事实、引文、结论三不变。
 
-如果输出直接、没有套话和口号结尾，就是装好了。
+两次都对才算装齐。最后告诉我：用的哪种方式、装了哪些版本、验证结果如何。
 
 最后告诉我：你用的是哪种方式、装到了哪里、验证结果如何。
 ```
@@ -95,7 +98,7 @@ npx skills add Milo-businu/humanizer-chinese --global --agent '*'
 
 ### DeepSeek Harness（DSH）
 
-DSH 只接受 kebab-case 的 skill 名，仓库里的 `dsh/humanizer-chinese/` 就是给它准备的副本。把目录拷到用户 skill 目录：
+DSH 只接受 kebab-case 的 skill 名，仓库里的 `dsh/humanizer-chinese/` 是通用版副本。把目录拷到用户 skill 目录：
 
 ```
 mkdir -p ~/.dsh/skills
@@ -104,13 +107,22 @@ cp -r dsh/humanizer-chinese ~/.dsh/skills/
 
 装完重启 `dsh web`，用 `/humanizer-chinese` 调用，或者直接说「把这段改成人话」。
 
+**注意**：DSH 兼容副本目前只有通用版。五个扩展版和一键切换入口还没做 DSH 适配——它们的 `name` 已是 kebab-case，但 `dsh/` 下没有对应副本。要在 DSH 里用扩展版，把对应目录的 `SKILL.md` 拷到 `~/.dsh/skills/<kebab-case-name>/` 下，例如：
+
+```
+cp -r 学术版 ~/.dsh/skills/humanizer-academic
+cp -r 包袱版 ~/.dsh/skills/humanizer-baofu
+```
+
+其余版本同理，目录名换成各自的 kebab-case name。
+
 ### Claude.ai 和 Claude Desktop
 
 下载仓库 ZIP（Code → Download ZIP），在设置里作为 skill 上传。
 
 ## 用法
 
-直接调用：
+### 通用版
 
 ```
 /白描改写
@@ -118,13 +130,25 @@ cp -r dsh/humanizer-chinese ~/.dsh/skills/
 [粘贴要改的文字]
 ```
 
-也可以用大白话：
+### 指定版本
 
 ```
-把这段改成人话：[你的文字]
+用学术版润色这段论文摘要：[你的文字]
+用包袱版改这个段子：[你的文字]
+用社交媒体版改这篇小红书：[你的文字]
 ```
 
-改文件：
+五个扩展版都能这么用。版本名和调用名见 [版本机制说明.md](版本机制说明.md)。
+
+### 不指定版本
+
+```
+这段帮我处理一下：[你的文字]
+```
+
+一键切换会判断该用哪个版本，说明理由后再动手。想跳过确认就说「直接改」。
+
+### 改文件
 
 ```
 把 docs/announcement.md 的正文改成人话
@@ -150,18 +174,30 @@ cp -r dsh/humanizer-chinese ~/.dsh/skills/
 
 语言模型挑的是「对谁都合适」的说法，人只对眼前这件事、这个读者说话。AI 腔就是假装重要、假装深刻、假装全面。
 
-它按四步走：
+所有版本共享四步工作流：
 
 1. 通读全文，标出病灶，按强度排好。
 2. 出初稿。保住有依据的事实，啰嗦的压短，该合并就合并，该拆就拆。
 3. 核对数字、人名、日期、引文、出处、排序、同时发生的表述。丢了就是错误。
 4. 写终稿。每个点直接说出来，长短句交错。
 
-粘贴文字时默认只给终稿。想看过程，说一句「展示过程」「怎么改的」或「诊断一下」。被别的任务调用时，也只给终稿。
+扩展版在四步之上叠加专属机制，主要是**动手前多一道判断**、**核对时多查几项**：
 
-## 22 种模式
+- 学术版：动手前声明三不变，核对时加伦理与披露义务
+- 营销版：动手前圈出保护对象，核对时加广告法红线
+- 文学创作版：动手前识别体裁、建作者风格档案，白名单内容不动
+- 社交媒体版：动手前识别平台，输出改成多标题多版本
+- 包袱版：动手前识别载体、建人物笑法档案，冷笑话白名单不误伤
+
+完整的机制对照见 [版本机制说明.md](版本机制说明.md)。
+
+粘贴文字时默认只给终稿（社媒版例外，默认给多个备选）。想看过程，说一句「展示过程」「怎么改的」或「诊断一下」。被别的任务调用时，也只给终稿。
+
+## 22 种模式（通用版）
 
 按强度从强到弱排。A 组见到就改；B 到 F 组要两个以上同现才改，因为谨慎的作者也可能故意用其中一条。
+
+各扩展版在这 22 条之外还有专属病灶：学术版 A1–A7、营销版 A1–A7、文学创作版 A1–A9、社交媒体版 A1–A8、包袱版 J1–J15。详见各自 `SKILL.md`。
 
 ### A. 造势代替陈述
 
@@ -221,17 +257,36 @@ cp -r dsh/humanizer-chinese ~/.dsh/skills/
 
 2022 年 11 月 30 日之前写的文字，不是 AI 写的。弱模式只出现一条，别动。一条病灶都没有，原样退回。
 
+各版本有额外白名单，**优先级高于上面的通用规则**：
+
+- 学术版：术语、固定句式、引用格式不动
+- 营销版：可验证的具体卖点、数据、品牌口号不动
+- 文学创作版：方言、原创隐喻、有主题依据的晦涩、诗歌倒装不动
+- 社交媒体版：有真实经历支撑的口语、平台原生 emoji 和分段保留
+- 包袱版：冷笑话与无语式幽默不动——「尬」是笑点，不是病灶
+
 ## 测试样例
 
-[测试样例.md](测试样例.md) 有 7 组对照：公众号腔、AI 日报、公文汇报、聊天消息、技术文档、提示注入、语气匹配。改完规则后拿原文重跑，看结果有没有退化。
+每个版本都有自己的测试样例，改完规则后拿原文重跑，看结果有没有退化：
+
+| 版本 | 样例文件 | 重点检查 |
+|------|----------|----------|
+| 通用版 | [测试样例.md](测试样例.md) | 7 组：公众号腔、AI 日报、公文、聊天、技术文档、提示注入、语气匹配 |
+| 学术版 | [学术版/references/测试样例.md](学术版/references/测试样例.md) | 三不变是否守住、伦理提示是否到位 |
+| 营销版 | [营销版/references/测试样例.md](营销版/references/测试样例.md) | 卖点是否保住、CTA 是否强化、红线是否守住 |
+| 文学创作版 | [文学创作版/references/测试样例.md](文学创作版/references/测试样例.md) | 作者声音是否一致、白名单是否被误伤 |
+| 社交媒体版 | [社交媒体版/references/测试样例.md](社交媒体版/references/测试样例.md) | 平台语域是否正确、广告标识是否保留 |
+| 包袱版 | [包袱版/references/测试样例.md](包袱版/references/测试样例.md) | 冷笑话是否被误伤、人物动机是否保持 |
 
 ## 来源
 
 工作流结构借鉴 [blader/humanizer](https://github.com/blader/humanizer) 4.0：标记、初稿、核对、终稿，以及事实优先、样本覆盖规则、三种输出模式。模式库、误伤防护和例子是中文重写的，不是翻译。底层观察来自维基百科的 [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)。DSH 兼容副本按 [DeepSeek Harness skill 规范](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/subsystems/skills.md) 命名为 kebab-case。
 
+五个扩展版的调研依据写在 `proposals/` 下：学术版依据 COPE、Elsevier、Springer Nature 与中信所《AIGC 使用边界指南 2.0》；营销版依据《广告法》与市场监管总局执法指南；文学版依据中国社会科学网、中国作家网；社媒版依据《互联网广告管理办法》；包袱版依据良性违背公式、三翻四抖与 AI 幽默研究。各提案都标了来源可靠性分级和查不到可靠来源的地方。
+
 ## 版本记录
 
-见 [CHANGELOG.md](CHANGELOG.md)。
+当前 2.1.0：六个版本 + 一键切换工具。完整记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 许可
 

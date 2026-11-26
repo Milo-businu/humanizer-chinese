@@ -1,7 +1,7 @@
 {
   "name": "humanizer-chinese",
-  "description": "把中文 AI 腔改写成人话，不改变原意。",
-  "version": "1.0.0",
+  "description": "中文去 AI 味 skill 家族：通用版 + 学术/营销/文学创作/社交媒体/包袱五个扩展版。",
+  "version": "2.1.0",
   "author": {
     "name": "Milo-businu",
     "url": "https://github.com/Milo-businu"
@@ -9,6 +9,21 @@
   "homepage": "https://github.com/Milo-businu/humanizer-chinese",
   "repository": "https://github.com/Milo-businu/humanizer-chinese",
   "license": "MIT",
-  "keywords": ["writing", "editing", "chinese", "humanize", "prose", "style"],
-  "skills": ["./"]
+  "keywords": [
+    "writing",
+    "editing",
+    "chinese",
+    "humanize",
+    "prose",
+    "style"
+  ],
+  "skills": [
+    "./",
+    "学术版/",
+    "营销版/",
+    "文学创作版/",
+    "社交媒体版/",
+    "包袱版/",
+    "一键切换/"
+  ]
 }
