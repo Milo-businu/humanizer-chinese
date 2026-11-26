@@ -139,3 +139,5 @@ metadata:
 ## 来源
 
 喜剧理论参考：良性违背公式（McGraw & Warren）、三翻四抖、stand.app 脱口秀术语表、陈佩斯喜剧创作论。AI 幽默缺陷参考德国论文《ChatGPT is fun, but it is not funny!》报道。详见 `proposals/05-包袱版提案.md`。
+
+<!-- 包袱版：诊断并重构笑点结构 -->
