@@ -299,3 +299,5 @@ cp -r punchline ~/.dsh/skills/humanizer-baofu
 ## 许可
 
 MIT
+
+<!-- 中文主文档：六版本家族入口 -->
