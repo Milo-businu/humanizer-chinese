@@ -7,10 +7,12 @@
 Rewrite AI-sounding Chinese into natural human writing without changing the meaning. The pattern library was rebuilt for Chinese from scratch — it is not a translation of English rules.
 
 **Before:**
-> We are thrilled to announce that shared drafts are finally here! This is not just an update — it is a milestone in how we redefine collaboration. Let us build a better future together!
+> 在数字化转型浪潮席卷各行各业的今天，内容创作者面临的效率挑战日益凸显。我们非常激动地宣布，经过半年研发，小墨写作助手 3.0 正式上线！这不仅是一次版本更新，更是我们重新定义智能写作的里程碑。新版本赋能创作、激发灵感、重塑流程，支持长文记忆和语气指定两项功能，覆盖公众号、小红书、知乎三个平台。未来已来，让我们携手共创美好未来！
 
 **After:**
-> Shared drafts are out today. For months our team passed around files named final_v7.docx, and we got sick of it. Now two people can edit one document at once and see each other's changes as they type.
+> 小墨写作助手 3.0 上线了，做了半年。支持长文记忆和语气指定，覆盖公众号、小红书、知乎。
+
+The source and the rewrite are both in Chinese — this tool works on Chinese text. "赋能创作、激发灵感、重塑流程" sounds impressive but says nothing. The real facts are "3.0, six months, two features, three platforms" — all kept, all the filler cut.
 
 Numbers, names, citations, and links survive the rewrite. When a detail is uncertain, the skill writes a simpler sentence instead of inventing one.
 
