@@ -1,5 +1,9 @@
 # AI腔人话转换器/白描改写
 
+[![GitHub stars](https://img.shields.io/github/stars/Milo-businu/humanizer-chinese?style=flat)](https://github.com/Milo-businu/humanizer-chinese/stargazers) [![skills.sh](https://skills.sh/b/Milo-businu/humanizer-chinese)](https://skills.sh/Milo-businu/humanizer-chinese)
+
+English: [README.en.md](README.en.md)
+
 把中文 AI 腔改写成人话，意思不变。模式库针对中文写作重建，不是英文规则的翻译。
 
 这是一个 **skill 家族**：根目录是通用版，另有五个场景扩展版和一个一键切换入口。六个版本共享四步工作流，差别在动手前先做什么判断、核对时额外查什么。
@@ -49,6 +53,8 @@ python3 scripts/route_version.py --explain   # 查看完整规则表
 ```
 
 各版本到底多了什么机制，见 [版本机制说明.md](版本机制说明.md)。
+
+上面的两个徽章都是实时的：stars 来自 GitHub，Skills 来自 [skills.sh](https://skills.sh/) 对 `npx skills add` 安装的匿名统计。刚发布时 Skills 数字可能显示 `not found`——有人用 CLI 装过之后就会变成真实数字。
 
 ## 安装
 
