@@ -125,3 +125,5 @@ metadata:
 ## 来源
 
 红线依据：COPE 立场声明、Elsevier 期刊生成式 AI 政策、Springer Nature 红/黄/绿分级、中信所《学术出版中 AIGC 使用边界指南 2.0》。病灶观察来自意得辑、PaperTT、PaperTan 等行业来源。详见 `proposals/01-学术版提案.md`。
+
+<!-- 学术版：论文润色，守住事实/引文/结论三不变 -->
